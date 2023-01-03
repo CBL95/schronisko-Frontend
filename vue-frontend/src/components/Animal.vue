@@ -55,6 +55,7 @@ export default {
                     this.getAnimals();
                 })
             },
+            /*dodalem komentarz do testu gita */
             
         },
         created(){

@@ -60,9 +60,8 @@ export default {
     methods: {
         createAnimal() {
             AnimalService.createAnimal( this.formData)
-                .then((response) => console.log(response))
-                .catch((error) => console.log(error))
-                        
+                .then((response) => console.log(response),window.location.reload())
+                .catch((error) => console.log(error))                      
         },
 
     }

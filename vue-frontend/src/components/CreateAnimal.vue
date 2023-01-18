@@ -16,7 +16,9 @@
             </div>
             <div>
                 <label for="sex">Post Animal Sex</label>
-                <input type="text" id="sex" v-model="formData.sex">
+                <select id="sex" v-model="formData.sex">
+                    <option v-for="option in sexOptions" :value="option" :key="option">{{ option }}</option>
+                </select>
             </div>
             <div>
                 <label for="age">Post Animal Age</label>
@@ -28,13 +30,15 @@
             </div>
             <div>
                 <label for="size">Post Animal Size</label>
-                <input type="text" id="size" v-model="formData.size">
+                <select id="size" v-model="formData.size">
+                    <option v-for="option in sizeOptions" :value="option" :key="option">{{ option }}</option>
+                </select>
             </div>
             <button>Create Animal</button>
         </form>
-       
+
     </div>
-    
+
 </template>
 
 <script>
@@ -54,15 +58,17 @@ export default {
                 color: '',
                 size: '',
             },
+            sexOptions: ['MALE', 'FEMALE'],
+            sizeOptions: ['SMALL', 'MEDIUM', 'LARGE']
         }
     },
-    
+
     methods: {
         createAnimal() {
-            AnimalService.createAnimal( this.formData)
+            AnimalService.createAnimal(this.formData)
                 .then((response) => console.log(response))
                 .catch((error) => console.log(error))
-                        
+
         },
 
     }

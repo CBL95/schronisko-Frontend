@@ -59,7 +59,7 @@ export default {
                 size: '',
             },
             sexOptions: ['MALE', 'FEMALE'],
-            sizeOptions: ['SMALL', 'MEDIUM', 'LARGE']
+            sizeOptions: ['SMALL', 'MEDIUM', 'BIG']
         }
     },
 
